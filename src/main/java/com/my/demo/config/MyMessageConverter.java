@@ -32,12 +32,12 @@ public class MyMessageConverter extends AbstractHttpMessageConverter<User> {
     protected User readInternal(Class<? extends User> aClass, HttpInputMessage httpInputMessage) throws IOException, HttpMessageNotReadableException {
         String temp = StreamUtils.copyToString(httpInputMessage.getBody(), Charset.forName("UTF-8"));
         String[] arr = temp.split("-");
-        return new User(arr[0], new Integer(arr[1]), true, new Integer(arr[2]));
+        return new User(new Integer(arr[2]), arr[0], new Integer(arr[1]), 1);
     }
 
     @Override
     protected void writeInternal(User user, HttpOutputMessage httpOutputMessage) throws IOException, HttpMessageNotWritableException {
-        String out = "hello " + user.getName() + "-" + user.getAge() + "-" + user.isMan();
+        String out = "hello " + user.getName() + "-" + user.getAge() + "-" + user.getGender();
         httpOutputMessage.getBody().write(out.getBytes());
     }
 }

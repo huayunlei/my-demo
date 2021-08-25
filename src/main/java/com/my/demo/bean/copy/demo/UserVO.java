@@ -21,7 +21,7 @@ public class UserVO {
      */
 
     private long userId;
-    private String userName;
+    private String name;
     private int age;
     private String sex;
 

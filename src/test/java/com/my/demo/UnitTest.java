@@ -2,7 +2,7 @@ package com.my.demo;
 
 
 import cn.hutool.core.util.StrUtil;
-import com.my.demo.bean.copy.BeanUtilCopy;
+import com.my.demo.bean.copy.beanutils.BeanUtilCopy;
 import com.my.demo.bean.copy.demo.SexEnum;
 import com.my.demo.bean.copy.demo.UserDO;
 import com.my.demo.bean.copy.demo.UserVO;
@@ -12,10 +12,8 @@ import com.my.demo.util.RSAEncrypt;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.security.NoSuchAlgorithmException;
 import java.time.*;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;

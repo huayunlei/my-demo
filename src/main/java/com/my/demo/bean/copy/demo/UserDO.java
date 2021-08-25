@@ -1,8 +1,10 @@
 package com.my.demo.bean.copy.demo;
 
+import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 /**
  * @author hyl
