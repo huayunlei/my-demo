@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.method.support.ModelAndViewContainer;
-import org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -24,12 +23,6 @@ public class JsonMethodReturnValueHandler implements HandlerMethodReturnValueHan
     private TypeSerializer typeSerializer = new FastJsonSerializer();
 
     private List<ResponseBeanWrapper> responseBeanWrappers;
-
-    private RequestResponseBodyMethodProcessor target;
-
-    public JsonMethodReturnValueHandler(RequestResponseBodyMethodProcessor target) {
-        this.target = target;
-    }
 
     /**
      * 检验是否支持本处理器处理，返回true会执行handleReturnValue

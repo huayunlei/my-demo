@@ -1,5 +1,6 @@
 package com.my.demo;
 
+import com.my.demo.mvc.EnableMvc;
 import com.my.demo.mvc.GlobalHandlerExceptionResolver;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 @SpringBootApplication
 @ConditionalOnClass(SpringfoxWebMvcConfiguration.class)
 @EnableAspectJAutoProxy(exposeProxy = true, proxyTargetClass = true)
+@EnableMvc
 public class MyDemoApplication implements WebMvcConfigurer {
 
     public static void main(String[] args) throws UnknownHostException {
@@ -52,9 +54,9 @@ public class MyDemoApplication implements WebMvcConfigurer {
      * 全局异常处理
      * @param resolvers
      */
-    @Override
-    public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
-        resolvers.add(new GlobalHandlerExceptionResolver());
-    }
+//    @Override
+//    public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
+//        resolvers.add(new GlobalHandlerExceptionResolver());
+//    }
 
 }
