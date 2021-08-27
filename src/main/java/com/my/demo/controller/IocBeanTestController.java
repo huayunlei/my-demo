@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import com.my.demo.bean.ioc.BeanList;
 import com.my.demo.bean.ioc.user.UserFilter;
 import com.my.demo.domain.User;
+import com.my.demo.mvc.ResponseJson;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -12,14 +14,15 @@ import java.util.List;
 /**
  * @version:
  */
-@RestController
+@Controller
+@ResponseJson
+@RequestMapping("/ioc")
 public class IocBeanTestController {
 
     @Resource
     private BeanList<User, UserFilter> userFilters;
 
     @PostMapping("/getFilterUsers")
-    @ResponseBody
     public List<User> getFilterUsers(@RequestBody User user) {
         List<User> origin = Lists.newArrayList(
                 new User(1, "test1111", 12, 1),
