@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
+ * json返回格式handler
  * @version:
  */
 public class JsonMethodReturnValueHandler implements HandlerMethodReturnValueHandler {

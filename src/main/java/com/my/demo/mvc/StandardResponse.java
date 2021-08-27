@@ -1,6 +1,6 @@
 package com.my.demo.mvc;
 
-import com.my.demo.constant.CodeConstant;
+import com.my.demo.constant.exception.CodeConstant;
 
 import java.util.Date;
 

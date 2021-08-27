@@ -1,6 +1,8 @@
 package com.my.demo.controller;
 
 import com.my.demo.conditional.ListService;
+import com.my.demo.constant.exception.CodeConstant;
+import com.my.demo.constant.exception.ServiceException;
 import com.my.demo.event.DemoPublisher;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiResponse;
@@ -31,7 +33,7 @@ public class MyTestController {
 
         System.out.println(name);
 
-        return name;
+        return null;
     }
 
     @ApiResponses({@ApiResponse(code=400,message="请求参数没填好"),
@@ -54,5 +56,10 @@ public class MyTestController {
         String cmd = listService.showListCmd();
         System.out.println(cmd);
         return "ok";
+    }
+
+    @GetMapping("/exception")
+    public String testException() {
+        throw new ServiceException(CodeConstant.UNKNOWN_ERROR.getCode(), CodeConstant.UNKNOWN_ERROR.getMsg());
     }
 }
